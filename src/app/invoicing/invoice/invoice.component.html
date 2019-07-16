@@ -1,0 +1,20 @@
+<div class="invoice">
+  <app-invoice-positions [positions]=invoice.items (itemsChanged)=updateItems($event)></app-invoice-positions>
+  <app-invoice-summary [summary]=invoiceSummary></app-invoice-summary>
+</div>
+
+<div class="add-client-invoice">
+  <select class="client-choose" (change)="chooseClient($event)">
+    <option value="" disabled checked>Choose Client</option>
+    <option *ngFor="let cl of clients; let i = index" value="{{cl.firstName}}"attr.data-index="{{i}}">{{cl.firstName}} {{cl.lastName}}</option>
+  </select>
+  <button class="button" type="button" (click)="summary()">Add invoice to client</button>
+  <div class="alert-wrapper" *ngIf="flagAddedClient==='added'">
+    <div class="alert alert-success">Invoice added to client!</div>
+  </div>
+  <div class="alert-wrapper" *ngIf="flagAddedClient==='error'">
+      <div class="alert alert-danger">Something went wrong!</div>
+  </div>
+</div>
+
+

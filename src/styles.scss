@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+.button{
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    transition: all 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    background: rgb(253, 211, 68);
+    color: black;
+    border-radius: 2px;
+    font-weight: bold;
+    &:hover{
+        background: black;
+        color:rgb(253, 211, 68)
+    }
+}
+.jumbotron{
+    background-color: rgb(253, 211, 68) !important; 
+}
+select{
+    padding:10px;
+    line-height: 1;
+}
+h2{
+    font-size:25px !important;
+    text-transform:uppercase;
+    margin:20px 0 !important;
+}

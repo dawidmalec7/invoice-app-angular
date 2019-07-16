@@ -1,0 +1,40 @@
+<h2>Add your clients here!</h2>
+<form class="add-client-form">
+  <div class="input-field">
+    <label>First name: </label>
+    <input type="text" [(ngModel)]="client.firstName" name="first" />
+  </div>
+  <div class="input-field">
+    <label>Last name: </label>
+    <input type="text" [(ngModel)]="client.lastName" name="last" />
+  </div>
+  <div class="input-field">
+    <label>Email: </label>
+    <input type="text" [(ngModel)]="client.email" name="emailAddress" />
+  </div>
+  <div class="input-field">
+    <label>Tax Number: </label>
+    <input type="text" [(ngModel)]="client.taxNumber" name="taxNumb" />
+  </div>
+
+
+  <button class="button" (click)="pushClient()">Add Client</button>
+</form>
+
+
+<div class="row clients-wrapper">
+  <div class="col-md-4 client-wrapper" *ngFor="let cl of clients; let i = index">
+    <div class="client">
+        <div class="client-value"><span>First Name:</span> {{cl.firstName}} </div>
+        <div class="client-value"><span>Last Name: </span>{{cl.lastName}} </div>
+        <div class="client-value"><span>Email: </span>{{cl.email}}</div>
+        <div class="client-value"><span>Tax Number: </span> {{cl.taxNumber}}</div>
+        <div class="clien-invoices" *ngIf="cl.invoices != null">
+          <div class="client-invoice" *ngFor="let inv of cl.invoices.items">
+           <span>Invoice: </span> {{inv.name}} - {{inv.netto}} - {{inv.quantity}} - {{inv.tax}} - {{inv.unit}}
+          </div>
+        </div>
+        <button class="button mt-3" (click)="removeClient(i)">Remove Client</button>
+    </div>
+  </div>
+</div>

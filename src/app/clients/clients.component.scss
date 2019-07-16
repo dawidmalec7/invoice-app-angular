@@ -1,0 +1,27 @@
+.clients-wrapper{
+    margin: 30px 0;
+    .client-wrapper{
+        border:1px solid grey;
+        .client{
+            padding:20px;
+            .client-value{
+                display: flex;
+                justify-content: space-between;
+            }
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+}
+.add-client-form{
+    width:40%;
+    .input-field{
+        margin: 10px 0;
+        display:flex;
+        justify-content:space-between;
+    }
+    label{
+        font-weight: bold;
+    }
+}

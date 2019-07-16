@@ -1,0 +1,12 @@
+.button{
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px 20px;
+    transition: all .3s ease-in-out;
+    background: rgb(253, 211, 68);
+    color: black;
+    &:hover{
+        background: black;
+        color:rgb(253, 211, 68)
+    }
+}
