@@ -1,4 +1,30 @@
 <div class="contact-wrap">
   <h2>Contact us!</h2>
   <p>Let us know if you like our app or if you saw some bugs :O!</p>
+  <form class="add-client-form">
+    <div class="input-field">
+      <label>First name: </label>
+      <input type="text" [(ngModel)]="message.firstName" name="first" />
+    </div>
+    <div class="input-field">
+      <label>Mail: </label>
+      <input type="text" [(ngModel)]="message.email" name="email" />
+    </div>
+    <div class="input-field">
+      <label>Message: </label>
+      <textarea type="text" [(ngModel)]="message.message" name="message">
+      </textarea>
+    </div>
+    <button class="button" (click)="sendMessage()">Send Message!</button>
+  </form>
+</div>
+<h2>Your messages:</h2>
+<div class="row clients-wrapper">
+  <div class="col-md-4 client-wrapper" *ngFor="let msg of messages; let i = index">
+    <div class="client">
+        <div class="client-value"><span>First Name:</span> {{msg.firstName}} </div>
+        <div class="client-value"><span>Email: </span>{{msg.email}}</div>
+        <div class="client-value"><span>Message: </span> {{msg.message}}</div>
+    </div>
+  </div>
 </div>

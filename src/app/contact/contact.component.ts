@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from '../invoicing/model/contact-message/message';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
+  public message: Message = new Message;
+  public messages: Message[] = [];
   constructor() { }
 
   ngOnInit() {
+  }
+  public sendMessage(): void {
+    this.messages.push(this.message);
+    this.message = new Message;
   }
 
 }
